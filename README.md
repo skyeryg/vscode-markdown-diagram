@@ -1,6 +1,6 @@
 # VSCode Markdown Diagram 插件
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
+[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.md)
 
 一个VSCode插件，用于在Markdown文件预览时渲染流程图、时序图、类图、UML等图表。
