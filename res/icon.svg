@@ -1,3 +1,15 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M26.6667 1.66667H24V7H8V9.66667H5.33333V20.3333H8V23H10.6667V28.3333H21.3333V25.6667H26.6667V23H21.3333V20.3333H26.6667V17.6667H21.3333V15H10.6667V20.3333H8V9.66667H24V7H26.6667V1.66667ZM18.6667 25.6667H13.3333V17.6667H18.6667V25.6667Z" fill="#888888"/>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆角矩形（科技感底座） -->
+  <!-- <rect x="8" y="8" width="112" height="112" rx="12" fill="#2F2F3A"/> -->
+
+  <!-- 抽象流程图节点（代表Mermaid等图表） -->
+  <circle cx="64" cy="36" r="12" fill="#4FC3F7"/>
+  <circle cx="40" cy="68" r="10" fill="#FF8A65"/>
+  <circle cx="88" cy="68" r="10" fill="#AED581"/>
+
+  <!-- 连接线（象征流程图/关系图） -->
+  <path d="M64 48V60M64 60L50 66M64 60L78 66" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 底部代码符号（代表Markdown集成） -->
+  <path d="M32 94H96M40 86H56M72 86H88" stroke="#B0BEC5" stroke-width="4" stroke-linecap="round"/>
 </svg>
