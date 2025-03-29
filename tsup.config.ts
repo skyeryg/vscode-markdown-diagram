@@ -7,6 +7,7 @@ export default defineConfig([
     shims: false,
     dts: false,
     external: ['vscode'],
+    noExternal: ['markdown-it-diagram'],
   },
   {
     entry: ['src/preview.ts'],

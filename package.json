@@ -1,7 +1,7 @@
 {
   "publisher": "skyer",
   "name": "vscode-markdown-diagram",
-  "displayName": "vscode-markdown-diagram",
+  "displayName": "Markdown Diagram",
   "version": "1.0.1",
   "private": true,
   "packageManager": "pnpm@10.4.1",
@@ -50,8 +50,8 @@
     "update": "vscode-ext-gen --output src/generated/meta.ts",
     "lint": "eslint .",
     "vscode:prepublish": "nr build",
-    "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
+    "publish": "vsce publish",
+    "pack": "vsce package",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && nr publish"
