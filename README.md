@@ -1,6 +1,6 @@
 # VSCode Markdown Diagram 插件
 
-[![Version](https://img.shields.io/badge/version-1.0.5-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.md)
 
 一个VSCode插件，用于在Markdown文件预览时渲染流程图、时序图、类图、UML等图表。
@@ -17,18 +17,7 @@
   - Shift键+鼠标滚轮缩放
   - 长按鼠标左键拖动图表
   - 集成模态窗口预览模式
-
-## 安装方法
-
-### 从VSIX安装
-1. 下载最新发布的`vscode-markdown-diagram-1.0.0.vsix`文件
-2. 在VSCode中打开扩展视图(⇧⌘X)
-3. 点击"..."菜单选择"从VSIX安装"
-4. 选择下载的VSIX文件
-
-### 从市场安装(待发布)
-1. 在VSCode扩展市场中搜索"vscode-markdown-diagram"
-2. 点击安装按钮
+- 可设置图表最大高度
 
 ## 使用方法
 
