@@ -3,11 +3,9 @@ import { markdownItDiagramDom } from 'markdown-it-diagram/dom'
 import mermaid from 'mermaid'
 
 async function init() {
-  console.warn('init')
-
   mermaid.initialize({ startOnLoad: false })
   await mermaid.run()
-  markdownItDiagramDom(undefined)
+  markdownItDiagramDom()
 }
 
 // 初始化调用
