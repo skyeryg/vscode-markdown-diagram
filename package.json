@@ -33,7 +33,10 @@
     "onStartupFinished"
   ],
   "contributes": {
-    "commands": [],
+    "markdown.markdownItPlugins": true,
+    "markdown.previewScripts": [
+      "./dist/preview.global.js"
+    ],
     "configuration": {
       "type": "object",
       "title": "vscode-markdown-diagram",
@@ -41,7 +44,7 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --external vscode",
+    "build": "tsup --external vscode",
     "dev": "nr build --watch --sourcemap",
     "prepare": "nr update",
     "update": "vscode-ext-gen --output src/generated/meta.ts",
@@ -52,6 +55,10 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && nr publish"
+  },
+  "dependencies": {
+    "markdown-it-diagram": "^1.0.3",
+    "mermaid": "^11.6.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.2.1",

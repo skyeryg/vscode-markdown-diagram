@@ -1,21 +1,51 @@
-# vscode-markdown-diagram
+# VSCode Markdown Diagram 插件
 
-## Configurations
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.md)
 
-<!-- configs -->
+一个VSCode插件，用于在Markdown文件预览时渲染流程图、时序图、类图、UML等图表。
 
-**No data**
+## 功能特性
 
-<!-- configs -->
+- 支持Mermaid/PlantUML等图表语法
+- 基于[markdown-it-diagram](https://ryanuo.cc/zh/posts/md-it-diagarm)实现图表渲染
+- 轻量级、高性能的Markdown预览扩展
 
-## Commands
+## 安装方法
 
-<!-- commands -->
+### 从VSIX安装
+1. 下载最新发布的`vscode-markdown-diagram-1.0.0.vsix`文件
+2. 在VSCode中打开扩展视图(⇧⌘X)
+3. 点击"..."菜单选择"从VSIX安装"
+4. 选择下载的VSIX文件
 
-**No data**
+### 从市场安装(待发布)
+1. 在VSCode扩展市场中搜索"vscode-markdown-diagram"
+2. 点击安装按钮
 
-<!-- commands -->
+## 使用方法
 
-## License
+1. 在Markdown文件中使用Mermaid或PlantUML语法编写图表
+2. 打开Markdown预览视图查看渲染效果
+
+示例代码:
+````markdown
+```mermaid
+graph TD
+    A[开始] --> B(处理)
+    B --> C{决策}
+    C -->|是| D[结束]
+    C -->|否| B
+```
+````
+
+## 贡献指南
+
+欢迎提交Issue和Pull Request。请确保:
+1. 代码符合ESLint规范
+2. 提交前运行测试`pnpm test`
+3. 更新相关文档
+
+## 许可证
 
 [MIT](./LICENSE.md) License © 2025 [skyer](https://github.com/skyeryg)
