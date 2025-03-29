@@ -2,7 +2,7 @@
   "publisher": "skyer",
   "name": "vscode-markdown-diagram",
   "displayName": "Markdown Diagram",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "packageManager": "pnpm@10.4.1",
   "description": "Adds Mermaid PlantUML DOT and ditaa support to VS Code's builtin markdown preview",
@@ -52,7 +52,7 @@
       "properties": {
         "vscode-markdown-diagram.diagramMaxHeight": {
           "type": "number",
-          "default": 220,
+          "default": 600,
           "description": "图表容器的最大高度(像素)，0表示不限制"
         }
       }
