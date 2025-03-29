@@ -1,6 +1,6 @@
 # VSCode Markdown Diagram 插件
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
+[![Version](https://img.shields.io/badge/version-1.1.2-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.md)
 
 一个VSCode插件，用于在Markdown文件预览时渲染流程图、时序图、类图、UML等图表。
@@ -17,7 +17,7 @@
   - Shift键+鼠标滚轮缩放
   - 长按鼠标左键拖动图表
   - 集成模态窗口预览模式
-- 可设置图表最大高度
+- 可设置图表最大高度，默认600px
 
 ## 使用方法
 
