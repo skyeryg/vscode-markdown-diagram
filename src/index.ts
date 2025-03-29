@@ -1,31 +1,33 @@
 import markdownItDiagram from 'markdown-it-diagram'
-import { defineExtension, watchEffect } from 'reactive-vscode'
+import { defineExtension, watch } from 'reactive-vscode'
 import { commands, window } from 'vscode'
 import { config } from './config'
 
-function injectDiagramMaxHeight(md: any, options: { height: number }) {
-  const injectScript = `
+function injectMarkdownDiagramConfig(md: any, options: { maxHeight: number, darkTheme?: string, lightTheme?: string }) {
+  md.core.ruler.push('inject_markdown_diagram_config', (state: any) => {
+    if (options.maxHeight && options.maxHeight > 220) {
+      const token = new state.Token('html_block', '', 0)
+      token.content = `
       <style>
           div[data-controll-panel-container] {
-            max-height: ${options.height}px;
+            max-height: ${options.maxHeight}px;
           }
       </style>
   `
-
-  md.core.ruler.push('inject_diagram_max_height', (state: any) => {
-    const token = new state.Token('html_block', '', 0)
-    token.content = injectScript
-    state.tokens.push(token)
+      state.tokens.push(token)
+    }
+    const configToken = new state.Token('html_block', '', 0)
+    configToken.content = `
+      <span id="data-diagram-config" data-dark-theme="${options.darkTheme}" data-light-theme="${options.lightTheme}"></span>
+  `
+    state.tokens.push(configToken)
   })
 }
 
 const { activate, deactivate } = defineExtension(() => {
-  watchEffect(() => {
-    const diagramMaxHeight = config.diagramMaxHeight
-
-    if (diagramMaxHeight) {
-      commands.executeCommand('markdown.api.reloadPlugins')
-    }
+  watch(config, () => {
+    console.warn('config change')
+    commands.executeCommand('markdown.api.reloadPlugins')
   })
   // 注册Markdown预览贡献点
   return {
@@ -38,9 +40,7 @@ const { activate, deactivate } = defineExtension(() => {
           imageFormat: 'svg', // 统一图片格式为svg
         })
 
-        if (config.diagramMaxHeight && config.diagramMaxHeight > 220) {
-          md.use(injectDiagramMaxHeight, { height: config.diagramMaxHeight })
-        }
+        md.use(injectMarkdownDiagramConfig, { maxHeight: config.diagramMaxHeight, darkTheme: config.darkTheme, lightTheme: config.lightTheme })
       }
       catch (error) {
         const msg = error instanceof Error ? error.message : String(error)
