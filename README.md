@@ -7,9 +7,16 @@
 
 ## 功能特性
 
-- 支持Mermaid/PlantUML等图表语法
+- 支持Mermaid/PlantUML/DOT/ditaa等多种图表语法
 - 基于[markdown-it-diagram](https://ryanuo.cc/zh/posts/md-it-diagarm)实现图表渲染
 - 轻量级、高性能的Markdown预览扩展
+- 提供丰富的控件功能：
+  - 缩放、移动、粗糙渲染
+  - 复制源代码
+- 支持交互操作：
+  - Shift键+鼠标滚轮缩放
+  - 长按鼠标左键拖动图表
+  - 集成模态窗口预览模式
 
 ## 安装方法
 
