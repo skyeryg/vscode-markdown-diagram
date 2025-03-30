@@ -23,5 +23,6 @@ async function init() {
   markdownItDiagramDom()
 }
 
+window.addEventListener('vscode.markdown.updateContent', init)
 // 初始化调用
 init()
