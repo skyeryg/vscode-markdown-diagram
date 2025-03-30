@@ -48,24 +48,24 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "Markdown Diagram",
+      "title": "%config.markdownDiagram.title%",
       "properties": {
         "vscode-markdown-diagram.diagramMaxHeight": {
           "type": "number",
           "default": 600,
-          "description": "图表容器的最大高度(像素)，0表示不限制"
+          "description": "%config.diagramMaxHeight.description%"
         },
         "vscode-markdown-diagram.darkTheme": {
           "type": "string",
           "default": "dark",
           "enum": ["dark", "default", "neutral", "forest"],
-          "description": "图表容器在暗黑模式下的主题，可选值：default|neutral|dark|forest"
+          "description": "%config.darkTheme.description%"
         },
         "vscode-markdown-diagram.lightTheme": {
           "type": "string",
           "default": "default",
           "enum": ["default", "dark", "neutral", "forest"],
-          "description": "图表容器在暗黑模式下的主题，可选值：default|neutral|dark|forest"
+          "description": "%config.lightTheme.description%"
         }
       }
     }

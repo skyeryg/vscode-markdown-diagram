@@ -1,0 +1,6 @@
+{
+  "config.markdownDiagram.title": "Markdown 图表",
+  "config.diagramMaxHeight.description": "图表容器的最大高度(像素)，0表示不限制",
+  "config.darkTheme.description": "图表容器在暗黑模式下的主题，可选值：default|neutral|dark|forest",
+  "config.lightTheme.description": "图表容器在浅色模式下的主题，可选值：default|neutral|dark|forest"
+}

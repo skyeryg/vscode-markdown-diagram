@@ -1,0 +1,6 @@
+{
+  "config.markdownDiagram.title": "Markdown Diagram",
+  "config.diagramMaxHeight.description": "Maximum height of diagram container (in px), 0 means no limit",
+  "config.darkTheme.description": "Theme for diagram container in dark mode, options: default|neutral|dark|forest",
+  "config.lightTheme.description": "Theme for diagram container in light mode, options: default|neutral|dark|forest"
+}
