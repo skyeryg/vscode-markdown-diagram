@@ -2,7 +2,7 @@
   "publisher": "skyer",
   "name": "vscode-markdown-diagram",
   "displayName": "Markdown Diagram",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "private": true,
   "packageManager": "pnpm@10.4.1",
   "description": "Adds Mermaid PlantUML DOT and ditaa support to VS Code's builtin markdown preview",
@@ -33,6 +33,8 @@
   "files": [
     "LICENSE.md",
     "dist/*",
+    "package.nls.json",
+    "package.nls.zh-cn.json",
     "res/icon.*"
   ],
   "engines": {

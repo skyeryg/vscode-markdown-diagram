@@ -1,7 +1,7 @@
-import markdownItDiagram from 'markdown-it-diagram'
 import { defineExtension, watch } from 'reactive-vscode'
 import { commands, window } from 'vscode'
 import { config } from './config'
+import markdownItDiagram from './markdown-it-diagram'
 
 function injectMarkdownDiagramConfig(md: any, options: { maxHeight: number, darkTheme?: string, lightTheme?: string }) {
   md.core.ruler.push('inject_markdown_diagram_config', (state: any) => {
