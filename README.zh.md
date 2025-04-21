@@ -1,6 +1,6 @@
 # VSCode Markdown Diagram 插件
 
-[![Version](https://img.shields.io/badge/version-1.1.5-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
+[![Version](https://img.shields.io/badge/version-1.1.6-blue.svg)](https://marketplace.visualstudio.com/items?itemName=skyer.vscode-markdown-diagram)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.md)
 
 [English](./README.md)
