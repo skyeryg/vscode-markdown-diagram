@@ -11,4 +11,3 @@ logs
 node_modules
 temp
 src/generated
-src/markdown-it-diagram

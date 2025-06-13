@@ -60,13 +60,23 @@
         "vscode-markdown-diagram.darkTheme": {
           "type": "string",
           "default": "dark",
-          "enum": ["dark", "default", "neutral", "forest"],
+          "enum": [
+            "dark",
+            "default",
+            "neutral",
+            "forest"
+          ],
           "description": "%config.darkTheme.description%"
         },
         "vscode-markdown-diagram.lightTheme": {
           "type": "string",
           "default": "default",
-          "enum": ["default", "dark", "neutral", "forest"],
+          "enum": [
+            "default",
+            "dark",
+            "neutral",
+            "forest"
+          ],
           "description": "%config.lightTheme.description%"
         }
       }
@@ -85,19 +95,26 @@
     "typecheck": "tsc --noEmit",
     "release": "bumpp && nr publish"
   },
+  "peerDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "markdown-it": "^14.1.0"
+  },
   "dependencies": {
-    "markdown-it-diagram": "^1.0.3",
-    "mermaid": "^11.6.0"
+    "@panzoom/panzoom": "^4.6.0",
+    "mermaid": "^11.6.0",
+    "svg2roughjs": "^3.2.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
     "@antfu/ni": "^23.3.1",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.13.14",
     "@types/vscode": "^1.97.0",
     "@vscode/vsce": "^3.3.1",
     "bumpp": "^10.1.0",
     "eslint": "^9.23.0",
     "esno": "^4.8.0",
+    "markdown-it": "^14.1.0",
     "pnpm": "^10.7.0",
     "reactive-vscode": "^0.2.14",
     "tsup": "^8.4.0",
