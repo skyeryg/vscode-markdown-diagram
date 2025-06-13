@@ -1,10 +1,10 @@
 'use strict'
 
 import type { LangType, PlantumlOptions } from './types'
-import { SelectorEnum } from './types'
-
 import deflate from './deflate'
+
 import { getController } from './render-control'
+import { SelectorEnum } from './types'
 
 const functions = {
   options: {

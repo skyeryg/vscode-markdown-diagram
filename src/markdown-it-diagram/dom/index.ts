@@ -1,11 +1,12 @@
-import { Svg2Roughjs } from 'svg2roughjs'
+/* eslint-disable unused-imports/no-unused-vars */
 import type { PanzoomObject } from '@panzoom/panzoom'
-import Panzoom from '@panzoom/panzoom'
 import type { ActionMap, ContainterSelector, PanDirection } from './types'
-import { SelectorEnum } from './types'
+import Panzoom from '@panzoom/panzoom'
+import { Svg2Roughjs } from 'svg2roughjs'
+import { copyImage, unescapeHTML } from '../util'
 import { DiagarmModal } from './modal'
 import { css } from './style'
-import { copyImage, unescapeHTML } from '../util'
+import { SelectorEnum } from './types'
 
 export function injectStyle(styleId: string): void {
   // Check if the style tag with the specified ID already exists
