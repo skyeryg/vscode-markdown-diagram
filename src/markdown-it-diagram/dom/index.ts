@@ -5,7 +5,7 @@ import type { ActionMap, ContainterSelector, PanDirection } from './types'
 import { SelectorEnum } from './types'
 import { DiagarmModal } from './modal'
 import { css } from './style'
-import { unescapeHTML } from '../util'
+import { copyImage, unescapeHTML } from '../util'
 
 export function injectStyle(styleId: string): void {
   // Check if the style tag with the specified ID already exists
@@ -60,12 +60,7 @@ async function copyToClipboard(btn: HTMLElement): Promise<void> {
       await navigator.clipboard.writeText(unescapeHTML(text))
       const copyIcon = btn.querySelector('.octicon-init')
       const checkIcon = btn.querySelector('.octicon-check')
-      copyIcon?.classList.add('fg-none')
-      checkIcon?.classList.remove('fg-none')
-      setTimeout(() => {
-        copyIcon?.classList.remove('fg-none')
-        checkIcon?.classList.add('fg-none')
-      }, 1000)
+      showCheckIcon(copyIcon, checkIcon)
     }
     else {
       console.warn('The Current Environment Does Not Support Clipboard API')
@@ -74,6 +69,15 @@ async function copyToClipboard(btn: HTMLElement): Promise<void> {
   catch (err) {
     console.error('Failed To Copy To Clipboard:', err)
   }
+}
+
+function showCheckIcon(icon: Element | null, checkIcon: Element | null) {
+  icon?.classList.add('fg-none')
+  checkIcon?.classList.remove('fg-none')
+  setTimeout(() => {
+    icon?.classList.remove('fg-none')
+    checkIcon?.classList.add('fg-none')
+  }, 1000)
 }
 
 /**
@@ -145,23 +149,26 @@ async function replaceImageWithSvg(diagram: HTMLElement, svgTemp: any, callback:
   }
 }
 
-function downloadImage(diagram: HTMLElement | null) {
+async function downloadImage(diagram: HTMLElement | null, btn: HTMLElement) {
   if (!diagram) {
     console.warn('Cannot find container element')
     return
   }
   const img = diagram.querySelector('img')
   const svgObj = diagram.querySelector('svg')
+  const downloadIcon = btn.querySelector('.octicon-init')
+  const checkIcon = btn.querySelector('.octicon-check')
+
   if (img) {
-    const imgUrl = img.getAttribute('src')
-    if (imgUrl) {
-      download(imgUrl)
-    }
+    await copyImage(img)
+    showCheckIcon(downloadIcon, checkIcon)
   }
   else if (svgObj) {
     const svgString = new XMLSerializer().serializeToString(svgObj)
-    const blob = new Blob([svgString], { type: 'image/svg+xml' })
-    downloadBlob(blob)
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(svgString)
+      showCheckIcon(downloadIcon, checkIcon)
+    }
   }
   else {
     console.warn('Cannot find image or svg within container')
@@ -315,7 +322,7 @@ const markdownItDiagramDom: (selector?: ContainterSelector) => void = function (
           })
         },
         'rough': () => svgToRough(diagram, button, svgTemp),
-        'download': () => downloadImage(diagram),
+        'download': () => downloadImage(diagram, button),
       }
 
       const btnName: string | undefined = button.dataset.controlBtn as string
